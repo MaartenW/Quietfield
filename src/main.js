@@ -27,6 +27,12 @@ app.whenReady().then(() => {
         });
     });
 
+    view.webContents.setWindowOpenHandler(({ url }) => {
+        // Open links to external websites in system browser
+        require('electron').shell.openExternal(url);
+        return { action: 'deny' };
+      });
+
     view.webContents.loadURL('https://www.stackfield.com/login.htm')
 
 })
