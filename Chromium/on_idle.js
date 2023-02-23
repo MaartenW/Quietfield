@@ -7,9 +7,9 @@
         // Do not display activities that are not related to you:
         , ".quietfield .SpnGroupUnreadedMarker { visibility: hidden; }"
         // Make sure any pickers are above the dialogs
-        , ".picker {z-index: 100002;}"
+        // , ".picker {z-index: 100002;}" // DOESN'T WORK
         // Tone down the notification badges, they are mostly not about your work but do indicate your team's progress.
-        ,".SpnGroupUnreaded.SpnGroupRed { background: rgb(68 137 228); color: rgb(204 204 204); transform: scale(0.8); }"
+        ,".quietfield .SpnGroupUnreaded.SpnGroupRed { background: rgb(68 137 228); color: rgb(204 204 204); transform: scale(0.8); }"
     ];
 
     const css = extraCSS.join(" ");
