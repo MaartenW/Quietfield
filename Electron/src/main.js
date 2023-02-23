@@ -19,13 +19,30 @@ app.whenReady().then(() => {
 
     view.webContents.addListener('did-navigate', (e,u,c,t)=>{
         view.webContents.insertCSS(extraCSS.join(" ")).then(result => {
-            console.log('CSS Added Successfully')
-            console.log('Unique Key Returned ', result)
+            // console.log('CSS Added Successfully')
+            // console.log('Unique Key Returned ', result)
             cssKey = result;
         }).catch(error => {
             console.log(error);
         });
     });
+
+    /**
+     * Intercept specific links and open them in new window
+     * aimed at pages
+     */
+    // view.webContents.addEventListener("dom-ready", function() {
+    //     var anchors = document.getElementsByTagName("a");
+    //     for (var a = 0; a < anchors.length; a++) {
+    //         var anchor = anchors[a];
+    //         if (anchor.getAttribute('target') == 'content_frame') {
+    //             anchor.addEventListener('click', function (e) {
+    //                 e.preventDefault();
+    //                 webview.loadURL(e.srcElement.href);                
+    //             });
+    //         }
+    //     }                                
+    // });
 
     view.webContents.setWindowOpenHandler(({ url }) => {
         // Open links to external websites in system browser

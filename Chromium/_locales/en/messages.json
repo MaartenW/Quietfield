@@ -1,0 +1,14 @@
+{
+	"ext_name": {
+		"message": "Quietfield",
+		"description": "Extension name"
+	},
+	"ext_description": {
+		"message": "A simple Chrome extension which quiets down the multitude of notifications in Stackfield©.",
+		"description": "Extension description"
+	},
+	"ext_tooltip": {
+		"message": "Turn Stackfield© notifications on/off",
+		"description": "Extension default tooltip"
+	}
+}
