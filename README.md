@@ -27,7 +27,7 @@ Enabling you to work without being alerted every-single-time a co-worker does an
 
 ### Install
 
-Via Chrome webstore
+Via [Chrome webstore](https://chrome.google.com/webstore/detail/quietfield/oonmipjhokfebfgedlbnmmaffdememim)
 
 
 ## Disclaimer
