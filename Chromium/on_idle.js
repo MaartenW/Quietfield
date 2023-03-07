@@ -14,10 +14,39 @@
 
     const css = extraCSS.join(" ");
 
-    var styleSheet = document.createElement("style");
+    let styleSheet = document.createElement("style");
     styleSheet.innerText = css;
     document.head.appendChild(styleSheet);
     document.body.classList.add("quietfield");
+
+    top.updateTitle = () => {
+        document.title = "Stackfield | " + document.querySelector('.DivGroupItemClick .SpnLeftDescription').textContent;
+    };
+
+    top.hasTitle = () => {
+        return document.querySelector('.DivGroupItemClick .SpnLeftDescription') !== null;
+    }
+
+    top.waitForTitle = () => {
+        setTimeout(() => {
+            if(top.hasTitle()){
+                top.updateTitle();
+            }else{
+                top.waitForTitle();
+            }
+        },100);
+    }
+
+    // Make page history more useful instead of long list of "Stackfield" mentions
+    let prevUrl = undefined;
+    setInterval(() => {
+        const currUrl = window.location.href;
+        if (currUrl !== prevUrl) {
+            // URL changed
+            prevUrl = currUrl;
+            top.waitForTitle();
+        }
+    }, 100);
 
     console.log('Stackfield quieted down');
 
